@@ -10,12 +10,7 @@ export function fetchImages(query) {
     safesearch: 'true',
   });
 
-  return fetch(`${apiUrl}?${params.toString()}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }).then(response => {
+  return fetch(`${apiUrl}?${params.toString()}`).then(response => {
     if (!response.ok) {
       throw new Error(response.status);
     }

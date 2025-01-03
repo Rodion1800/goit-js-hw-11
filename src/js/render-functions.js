@@ -18,10 +18,10 @@ export function createImageCard(hit) {
 
   const stats = document.createElement('p');
   stats.innerHTML = `
-    <span>Likes: ${hit.likes}</span> | 
-    <span>Views: ${hit.views}</span> | 
-    <span>Comments: ${hit.comments}</span> | 
-    <span>Downloads: ${hit.downloads}</span>
+    <span class="stat-item">Likes: ${hit.likes}</span> 
+    <span class="stat-item">Views: ${hit.views}</span> 
+    <span class="stat-item">Comments: ${hit.comments}</span> 
+    <span class="stat-item">Downloads: ${hit.downloads}</span>
   `;
 
   cardInfo.appendChild(stats);

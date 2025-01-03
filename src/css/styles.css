@@ -65,6 +65,8 @@ button {
   height: 48px;
   padding: 10px;
   background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-around;
 }
 
 .card-info h3 {
@@ -78,4 +80,18 @@ button {
 
 #results {
   margin-top: 80px;
+}
+
+#loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  display: none;
+  z-index: 9999;
 }

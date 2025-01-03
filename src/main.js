@@ -8,6 +8,13 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const pictureName = document.querySelector('#picture-picker');
 const searchButton = document.querySelector('#Search-btn');
 const resultContent = document.querySelector('#results');
+const loadingIndicator = document.createElement('div');
+
+loadingIndicator.id = 'loading-indicator';
+loadingIndicator.classList.add('loading-indicator');
+loadingIndicator.textContent = 'Loading images, please wait';
+loadingIndicator.style.display = 'none';
+document.body.appendChild(loadingIndicator);
 
 searchButton.addEventListener('click', () => {
   const searchedPicture = pictureName.value.trim();
@@ -19,6 +26,11 @@ searchButton.addEventListener('click', () => {
     });
     return;
   }
+
+  loadingIndicator.style.display = 'block';
+
+  resultContent.innerHTML = '';
+
   fetchImages(searchedPicture)
     .then(data => {
       resultContent.innerHTML = '';
@@ -42,6 +54,7 @@ searchButton.addEventListener('click', () => {
       console.log(error);
     })
     .finally(() => {
+      loadingIndicator.style.display = 'none';
       pictureName.value = '';
     });
 });
