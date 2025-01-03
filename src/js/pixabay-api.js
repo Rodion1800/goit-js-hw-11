@@ -4,7 +4,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 const apiUrl = 'https://pixabay.com/api/';
 
 const apiKey = '47996916-063d7568314d3761f2b5e2fb9';
@@ -35,7 +34,7 @@ searchButton.addEventListener('click', () => {
 
   resultContent.innerHTML = '';
 
-  fetch(`${proxyUrl}${apiUrl}?${params.toString()}`, {
+  fetch(`${apiUrl}?${params.toString()}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
